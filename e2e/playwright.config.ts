@@ -6,11 +6,11 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,  
+  workers: process.env.CI ? 1 : 3,  
   reporter: [['html', { open: 'on-failure', outputFolder: './results/playwright-report' }]],
   use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
+    baseURL: 'https://ecommerce-bioma-react-bioma-next-sandbox.cl2.kilo.live',
+    trace: 'on',
   },
 
   projects: [
